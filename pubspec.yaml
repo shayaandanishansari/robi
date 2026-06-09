@@ -1,0 +1,31 @@
+name: robi
+description: "Robi Complete"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.11.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_riverpod: ^2.6.1
+  google_mlkit_face_detection: ^0.13.2
+  camera: ^0.12.0+1
+  permission_handler: ^12.0.1
+  cupertino_icons: ^1.0.8
+  web_socket_channel: ^3.0.1
+  flutter_dotenv: ^6.0.1
+  flutter_sound: ^9.30.0
+  audio_session: ^0.2.3
+  flutter_blue_plus: ^1.32.12
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - .env
