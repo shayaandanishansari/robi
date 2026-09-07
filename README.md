@@ -1,17 +1,30 @@
-# robi
+# Robi
 
-A new Flutter project.
+A Flutter app that gives Robi a face: an animated eye display driven by a live, voice-based conversation with Gemini, front-camera face tracking, and a BLE-connected pan/tilt servo that keeps Robi looking at you.
 
-## Getting Started
+## What it does
 
-This project is a starting point for a Flutter application.
+- **Eyes** — an animated eye widget (`lib/ui/widgets`) renders Robi's expression and gaze.
+- **Vision** — `VisionService` runs on-device face detection (Google ML Kit) against the front camera feed to track where the user is.
+- **Voice** — `LiveGeminiService` streams audio to and from the Gemini Live API over a WebSocket for real-time conversation, with mic capture and playback handled by `flutter_sound`.
+- **Servo tracking** — `ServoTrackingController` and `ServoBleService` talk to an ESP-based pan/tilt rig over Bluetooth LE, nudging it in 1° steps to keep Robi's head aimed at the tracked face.
 
-A few resources to get you started if this is your first Flutter project:
+## Getting started
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+1. Install [Flutter](https://docs.flutter.dev/get-started/install) (SDK `^3.11.4`).
+2. Install dependencies:
+   ```
+   flutter pub get
+   ```
+3. Create a `.env` file in the project root with your Gemini API key:
+   ```
+   GEMINI_API_KEY=your_key_here
+   ```
+4. Run on a connected device (camera, mic, and Bluetooth permissions are required):
+   ```
+   flutter run
+   ```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## License
+
+AGPL-3.0 — see [LICENSE](LICENSE).
