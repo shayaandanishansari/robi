@@ -2,6 +2,11 @@
 
 A Flutter app that gives Robi a face: an animated eye display driven by a live, voice-based conversation with Gemini, front-camera face tracking, and a BLE-connected pan/tilt servo that keeps Robi looking at you.
 
+<p align="center">
+  <img src="docs/images/robi-face.png" alt="Robi's eye lit up on the phone, mounted on the pan/tilt rig" width="45%">
+  <img src="docs/images/robi-build.png" alt="Close-up of the pan/tilt servo bracket and ESP32" width="45%">
+</p>
+
 ## What it does
 
 - **Eyes** — an animated eye widget (`lib/ui/widgets`) renders Robi's expression and gaze.
